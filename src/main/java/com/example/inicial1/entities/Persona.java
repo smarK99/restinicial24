@@ -34,5 +34,5 @@ public class Persona implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private Set<Libro> libros = new HashSet<>();
-}
 
+}
