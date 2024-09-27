@@ -2,6 +2,7 @@ package com.example.inicial1.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -12,15 +13,10 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-@Builder
+@SuperBuilder
 @Table(name = "localidad")
-public class Localidad implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Localidad extends Base {
 
     private String denominacion;
-
 
 }

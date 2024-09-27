@@ -2,6 +2,7 @@ package com.example.inicial1.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -11,13 +12,9 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-@Builder
+@SuperBuilder
 @Table(name = "autor")
-public class Autor implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Autor extends Base {
 
     private String nombre;
 
