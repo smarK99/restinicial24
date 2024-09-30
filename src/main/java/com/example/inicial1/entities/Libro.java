@@ -28,7 +28,7 @@ public class Libro extends Base{
 
     private String autor;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = CascadeType.REFRESH)//Que los autores para cada libro se mantengan actualizados
     @JoinTable(
             name = "libro_autor",
             joinColumns = @JoinColumn(name = "id_libro"),

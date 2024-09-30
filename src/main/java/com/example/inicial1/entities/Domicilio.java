@@ -22,7 +22,7 @@ public class Domicilio extends Base {
 
     private int numero;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @Builder.Default
-    private Set<Localidad> localidades = new HashSet<>();
+    @ManyToOne(optional = false)//La relacion no puede ser null, si o si debe existir una localidad para cada domiciliio creado
+    @JoinColumn(name = "fk_localidad")
+    private Localidad localidad;
 }
