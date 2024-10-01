@@ -5,7 +5,9 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,5 +37,5 @@ public class Libro extends Base{
             inverseJoinColumns = @JoinColumn(name = "id_autor")
     )
     @Builder.Default
-    private Set<Autor> autores = new HashSet<>();
+    private List<Autor> autores = new ArrayList<>();
 }

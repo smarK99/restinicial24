@@ -1,7 +1,9 @@
 package com.example.inicial1.services;
 
 import com.example.inicial1.entities.Base;
+import org.springframework.data.domain.Page;
 
+import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,5 +19,7 @@ public interface BaseService<E extends Base, ID extends Serializable> {
 
     public Boolean delete(ID id) throws Exception;
 
+    //Devuelve datos paginados
+    public Page<E> findAll(Pageable pageable) throws Exception;
 
 }
