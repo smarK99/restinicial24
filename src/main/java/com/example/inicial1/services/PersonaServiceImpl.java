@@ -19,6 +19,8 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
     public List<Persona> search(String filter) throws Exception {
         try{
             return personaRepository.findByNombreContainingOrApellidoContaining(filter, filter);
+            //return personaRepository.search(filter);
+            //return personaRepository.nativeSearch(filter);
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
